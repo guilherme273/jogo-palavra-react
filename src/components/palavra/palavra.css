@@ -1,0 +1,27 @@
+.palavras {
+  width: 400px;
+  height: 500px;
+
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.palavras .row-letras {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.palavras .div-input-letras {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.palavras .div-input-letras .input-letra {
+  font-size: 40px;
+  border: solid 1px black;
+  width: 60px;
+  text-align: center;
+  border-radius: 5px;
+  caret-color: transparent;
+}
