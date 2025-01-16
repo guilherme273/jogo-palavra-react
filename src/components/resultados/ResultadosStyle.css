@@ -5,3 +5,36 @@
   /* text-align: center;
   justify-content: center; */
 }
+
+/* Definindo uma animação "fade-in" */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* A classe que será aplicada quando o item for renderizado */
+.resultado-animado {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Se você quiser um slide, você pode adicionar um efeito de deslizamento */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.resultado-slide-in {
+  animation: slideIn 1s ease-in-out;
+}

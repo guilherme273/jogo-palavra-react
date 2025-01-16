@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import "./palavra.css";
 import Resultados from "../resultados/Resultados";
 import Teclado from "../teclado/Teclado";
@@ -20,27 +19,31 @@ function Palavra() {
   const atualizaInput = (e, index) => {
     const novoArray = [...arrayInput];
     novoArray[index] = e;
-
     setArrayInput(novoArray);
     focarNoProximoCampo();
   };
+
   const verificar = (e) => {
     e.preventDefault();
-
     const novoArray = {
       palavra: palavraArray.map(() => ""),
       cl: palavraArray.map(() => ""),
     };
 
     const inputPalavra = arrayInput.join("");
-
+    if (inputPalavra === "") {
+      return;
+    }
     if (inputPalavra === palavra) {
       novoArray.palavra = arrayInput;
       arrayInput.forEach((inp, ind) => {
         novoArray.cl[ind] = "green";
       });
       setArrayInput(palavraArray.map(() => ""));
-      setArrayResultados((prev) => [...prev, novoArray]);
+      setArrayResultados((prev) => [
+        ...prev,
+        { ...novoArray, animationClass: "resultado-animado" }, // Adicionando a classe de animação
+      ]);
       alert("Você ganhou!");
       const x = confirm("Jogar de Novo?");
       if (x) {
@@ -71,29 +74,31 @@ function Palavra() {
     });
 
     setArrayInput(palavraArray.map(() => ""));
-    setArrayResultados((prev) => [...prev, novoArray]);
+    setArrayResultados((prev) => [
+      ...prev,
+      { ...novoArray, animationClass: "resultado-animado" }, // Aplicando a animação ao novo item
+    ]);
   };
 
-  useEffect(() => {
-    console.log(arrayInput);
-  }, [arrayInput]);
   const focarNoProximoCampo = () => {
     const inputs = document.querySelectorAll("input, textarea, button");
-
     const indexFocado = Array.from(inputs).indexOf(document.activeElement);
 
     if (indexFocado >= 0 && indexFocado < inputs.length - 1) {
       inputs[indexFocado + 1].focus();
     }
   };
+
   return (
     <section className="palavras">
+      <h1 className="h1">Descubra a Palavra</h1>
       {arrayResultados.map((resultado, indice) => {
         return (
           <Resultados
             key={indice}
             cl={resultado.cl}
             palavra={resultado.palavra}
+            animationClass={resultado.animationClass} // Passando a classe de animação
           />
         );
       })}
@@ -113,11 +118,9 @@ function Palavra() {
         })}
       </div>
 
-      <button type="button" onClick={(e) => verificar(e)}>
-        enter
+      <button className="button" type="button" onClick={(e) => verificar(e)}>
+        Verificar
       </button>
-
-      {/* <Teclado /> */}
     </section>
   );
 }

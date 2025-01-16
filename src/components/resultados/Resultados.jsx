@@ -1,8 +1,8 @@
 import Letras from "../letras/letras";
 import "./ResultadosStyle.css";
-function Resultados({ cl, palavra }) {
+function Resultados({ cl, palavra, animationClass }) {
   return (
-    <div className="row-letras">
+    <div className={`row-letras ${animationClass}`}>
       {palavra.map((letra, index) => {
         return (
           <Letras c={cl[index]} key={index}>
