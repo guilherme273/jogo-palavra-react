@@ -1,7 +1,25 @@
-.letra {
-  font-size: 40px;
-  border: solid 1px black;
-  width: 60px;
+.neutra {
+  font-size: 50px;
+  border: solid 5px rgba(0, 0, 0, 0.541);
+  background-color: rgba(0, 0, 0, 0.315);
+  width: 65px;
   text-align: center;
   border-radius: 5px;
+}
+.green {
+  font-size: 50px;
+
+  border: solid 5px rgba(0, 0, 0, 0.677);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+}
+.yellow {
+  font-size: 50px;
+  border: solid 5px rgba(0, 0, 0, 0.699);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 0, 0.545);
 }

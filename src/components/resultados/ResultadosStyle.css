@@ -1,0 +1,7 @@
+.row-letras {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  /* text-align: center;
+  justify-content: center; */
+}

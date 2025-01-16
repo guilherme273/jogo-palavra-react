@@ -1,6 +1,6 @@
 import "./letras.css";
-function Letras({ children }) {
-  return <h1 className="letra">{children}</h1>;
+function Letras({ c, children }) {
+  return <h1 className={c}>{children}</h1>;
 }
 
 export default Letras;
