@@ -20,7 +20,7 @@
 
 /* A classe que será aplicada quando o item for renderizado */
 .resultado-animado {
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Se você quiser um slide, você pode adicionar um efeito de deslizamento */
@@ -36,5 +36,5 @@
 }
 
 .resultado-slide-in {
-  animation: slideIn 1s ease-in-out;
+  animation: slideIn 2s ease-in-out;
 }

@@ -1,7 +1,7 @@
 .palavras {
   width: 400px;
   height: 500px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   display: flex;
   flex-direction: column;
   align-items: center;

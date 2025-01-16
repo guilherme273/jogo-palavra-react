@@ -10,9 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.12.1",
     "lucide-react": "^0.471.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-lottie": "^1.2.10",
+    "react-toastify": "^11.0.3",
+    "sweetalert2": "^11.15.10",
     "uuid": "^11.0.5"
   },
   "devDependencies": {

@@ -5,9 +5,13 @@ import Teclado from "../teclado/Teclado";
 import { Palavras, gerarNumeroAleatorio } from "../../util";
 import ModalComponent from "../modal/ModalComponent";
 import Tutorial from "../tutorial/Tutorial";
+import Confirm from "../confirm/Confirm";
+import MsgConfirm from "../msgConfirm/MsgConfirm";
 
 function Palavra() {
-  const [palavra, setPalavra] = useState(Palavras[gerarNumeroAleatorio()]);
+  const [palavra, setPalavra] = useState(
+    Palavras[gerarNumeroAleatorio(0, Palavras.length)]
+  );
   console.log(palavra);
   const palavraArray = palavra.split("");
   const [arrayInput, setArrayInput] = useState(palavraArray.map(() => ""));
@@ -18,6 +22,7 @@ function Palavra() {
     },
   ]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenConfirm, setisOpenConfirm] = useState(false);
 
   const atualizaInput = (e, index) => {
     const novoArray = [...arrayInput];
@@ -47,11 +52,11 @@ function Palavra() {
         ...prev,
         { ...novoArray, animationClass: "resultado-animado" }, // Adicionando a classe de animação
       ]);
-      alert("Você ganhou!");
-      const x = confirm("Jogar de Novo?");
-      if (x) {
-        window.location.reload();
-      }
+
+      setTimeout(() => {
+        setisOpenConfirm(true);
+      }, 1000);
+
       return;
     }
 
@@ -128,12 +133,17 @@ function Palavra() {
       <button className="button" type="button" onClick={(e) => verificar(e)}>
         Verificar
       </button>
-      <button onClick={() => setIsOpen(true)}>Abrir Modal</button>
+      {/* <button onClick={() => setIsOpen(true)}>Abrir Modal</button> */}
 
       {isOpen && (
         <ModalComponent onClose={() => setIsOpen(false)}>
           <Tutorial />
         </ModalComponent>
+      )}
+      {isOpenConfirm && (
+        <Confirm onClose={() => setisOpenConfirm(false)}>
+          <MsgConfirm />
+        </Confirm>
       )}
     </section>
   );
