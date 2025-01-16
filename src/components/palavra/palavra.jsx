@@ -3,6 +3,8 @@ import "./palavra.css";
 import Resultados from "../resultados/Resultados";
 import Teclado from "../teclado/Teclado";
 import { Palavras, gerarNumeroAleatorio } from "../../util";
+import ModalComponent from "../modal/ModalComponent";
+import Tutorial from "../tutorial/Tutorial";
 
 function Palavra() {
   const [palavra, setPalavra] = useState(Palavras[gerarNumeroAleatorio()]);
@@ -15,6 +17,7 @@ function Palavra() {
       cl: palavraArray.map(() => ""),
     },
   ]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const atualizaInput = (e, index) => {
     const novoArray = [...arrayInput];
@@ -89,6 +92,10 @@ function Palavra() {
     }
   };
 
+  useEffect(() => {
+    setIsOpen(true);
+  }, []);
+
   return (
     <section className="palavras">
       <h1 className="h1">Descubra a Palavra</h1>
@@ -121,6 +128,13 @@ function Palavra() {
       <button className="button" type="button" onClick={(e) => verificar(e)}>
         Verificar
       </button>
+      <button onClick={() => setIsOpen(true)}>Abrir Modal</button>
+
+      {isOpen && (
+        <ModalComponent onClose={() => setIsOpen(false)}>
+          <Tutorial />
+        </ModalComponent>
+      )}
     </section>
   );
 }
