@@ -22,13 +22,16 @@
   gap: 0.5rem;
 }
 .palavras .div-input-letras .input-letra {
-  font-size: 50px;
+  font-size: 40px;
   border: solid 5px rgba(0, 0, 0, 0.541);
   background-color: rgba(0, 0, 0, 0.315);
   width: 65px;
   height: 68px;
   text-align: center;
   border-radius: 5px;
+  text-transform: uppercase;
+  color: hsl(184, 70%, 91%);
+  padding: 0;
 }
 
 .palavras .button {

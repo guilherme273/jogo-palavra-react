@@ -22,7 +22,7 @@ function Teclado() {
   };
 
   // As letras que aparecerão no teclado
-  const letras = "abcdefghijklmnopqrstuvwxyz".split("");
+  const letras = "qwertyuiopasdfghjklçzxcvbnm".split("");
 
   return (
     <div className="teclado">

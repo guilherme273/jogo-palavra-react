@@ -1,0 +1,56 @@
+.section-alert {
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 350px;
+  height: 250px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.section-alert .alert {
+  width: 97%;
+  height: 80%;
+  background-color: rgba(0, 0, 0, 0.651);
+  margin-top: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  border: 1px solid yellow;
+}
+.section-alert .alert .icon-alert {
+  margin-top: 10px;
+}
+.section-alert .alert .close {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  opacity: 0.8;
+}
+.section-alert .alert .close .p {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+.section-alert .alert .alert-content {
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.section-alert .alert .alert-content .p {
+  width: 80%;
+  font-size: 25px;
+  color: aliceblue;
+  text-align: center;
+}

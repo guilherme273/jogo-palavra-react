@@ -7,12 +7,15 @@ import ModalComponent from "../modal/ModalComponent";
 import Tutorial from "../tutorial/Tutorial";
 import Confirm from "../confirm/Confirm";
 import MsgConfirm from "../msgConfirm/MsgConfirm";
+import Alert from "../alert/Alert";
+import MsgLooser from "../msgLooeser/msgLooser";
 
 function Palavra() {
   const [palavra, setPalavra] = useState(
     Palavras[gerarNumeroAleatorio(0, Palavras.length)]
   );
   console.log(palavra);
+
   const palavraArray = palavra.split("");
   const [arrayInput, setArrayInput] = useState(palavraArray.map(() => ""));
   const [arrayResultados, setArrayResultados] = useState([
@@ -23,6 +26,9 @@ function Palavra() {
   ]);
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenConfirm, setisOpenConfirm] = useState(false);
+  const [confirmLoser, setConfirmLoser] = useState(false);
+  const [isAlertTrue, setisAlertTrue] = useState(false);
+  const [tentativas, setTentativas] = useState(1);
 
   const atualizaInput = (e, index) => {
     const novoArray = [...arrayInput];
@@ -38,10 +44,13 @@ function Palavra() {
       cl: palavraArray.map(() => ""),
     };
 
-    const inputPalavra = arrayInput.join("");
-    if (inputPalavra === "") {
+    const hasEmptyLetter = arrayInput.some((l) => l === "");
+
+    if (hasEmptyLetter) {
+      showAlert();
       return;
     }
+    const inputPalavra = arrayInput.join("");
     if (inputPalavra === palavra) {
       novoArray.palavra = arrayInput;
       arrayInput.forEach((inp, ind) => {
@@ -50,7 +59,7 @@ function Palavra() {
       setArrayInput(palavraArray.map(() => ""));
       setArrayResultados((prev) => [
         ...prev,
-        { ...novoArray, animationClass: "resultado-animado" }, // Adicionando a classe de animação
+        { ...novoArray, animationClass: "resultado-animado" },
       ]);
 
       setTimeout(() => {
@@ -84,8 +93,15 @@ function Palavra() {
     setArrayInput(palavraArray.map(() => ""));
     setArrayResultados((prev) => [
       ...prev,
-      { ...novoArray, animationClass: "resultado-animado" }, // Aplicando a animação ao novo item
+      { ...novoArray, animationClass: "resultado-animado" },
     ]);
+
+    setTentativas((prev) => prev + 1);
+    if (tentativas === 7) {
+      setTimeout(() => {
+        setConfirmLoser(true);
+      }, 1000);
+    }
   };
 
   const focarNoProximoCampo = () => {
@@ -97,55 +113,74 @@ function Palavra() {
     }
   };
 
+  const showAlert = () => {
+    setisAlertTrue(true);
+
+    setTimeout(() => {
+      setisAlertTrue(false);
+    }, 5000);
+  };
+
   useEffect(() => {
     setIsOpen(true);
   }, []);
 
   return (
-    <section className="palavras">
-      <h1 className="h1">Descubra a Palavra</h1>
-      {arrayResultados.map((resultado, indice) => {
-        return (
-          <Resultados
-            key={indice}
-            cl={resultado.cl}
-            palavra={resultado.palavra}
-            animationClass={resultado.animationClass} // Passando a classe de animação
-          />
-        );
-      })}
-
-      <div className="div-input-letras">
-        {palavraArray.map((letra, index) => {
+    <>
+      <section className="palavras">
+        <h1 className="h1">Descubra a Palavra</h1>
+        {arrayResultados.map((resultado, indice) => {
           return (
-            <input
-              onChange={(e) => atualizaInput(e.target.value, index)}
-              maxLength="1"
-              className="input-letra"
-              key={index}
-              type="text"
-              value={arrayInput[index]}
+            <Resultados
+              key={indice}
+              cl={resultado.cl}
+              palavra={resultado.palavra}
+              animationClass={resultado.animationClass} // Passando a classe de animação
             />
           );
         })}
-      </div>
 
-      <button className="button" type="button" onClick={(e) => verificar(e)}>
-        Verificar
-      </button>
-      {/* <button onClick={() => setIsOpen(true)}>Abrir Modal</button> */}
+        <div className="div-input-letras">
+          {palavraArray.map((letra, index) => {
+            return (
+              <input
+                onChange={(e) => atualizaInput(e.target.value, index)}
+                maxLength="1"
+                className="input-letra"
+                key={index}
+                type="text"
+                value={arrayInput[index]}
+              />
+            );
+          })}
+        </div>
 
-      {isOpen && (
-        <ModalComponent onClose={() => setIsOpen(false)}>
-          <Tutorial />
-        </ModalComponent>
-      )}
-      {isOpenConfirm && (
-        <Confirm onClose={() => setisOpenConfirm(false)}>
-          <MsgConfirm />
-        </Confirm>
-      )}
-    </section>
+        <button className="button" type="button" onClick={(e) => verificar(e)}>
+          Verificar
+        </button>
+        {/* <button onClick={() => setIsOpen(true)}>Abrir Modal</button> */}
+        {/* <div className="teclado">
+          <Teclado />
+        </div> */}
+        {isOpen && (
+          <ModalComponent onClose={() => setIsOpen(false)}>
+            <Tutorial />
+          </ModalComponent>
+        )}
+        {isOpenConfirm && (
+          <Confirm onClose={() => setisOpenConfirm(false)}>
+            <MsgConfirm />
+          </Confirm>
+        )}
+        {confirmLoser && (
+          <Confirm onClose={() => setisOpenConfirm(false)}>
+            <MsgLooser palavra={palavraArray} />
+          </Confirm>
+        )}
+
+        {isAlertTrue && <Alert fechar={() => setisAlertTrue(false)} />}
+      </section>
+    </>
   );
 }
 
