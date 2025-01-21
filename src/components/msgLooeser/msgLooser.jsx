@@ -8,7 +8,7 @@ function MsgLooser({ palavra }) {
   return (
     <section className="section-msg-confirm">
       <h2 className="h2-confirm">Você Perdeu!</h2>
-      <div className="icon-animado">
+      <div className="icon-animado-lose">
         <DotLottieReact
           style={{ backgroundColor: "black" }}
           className="icon"
@@ -17,7 +17,7 @@ function MsgLooser({ palavra }) {
           autoplay
         />
       </div>
-      <div className="paragrafo">
+      <div className="paragrafo-lose">
         <p className="p"> Voçê não conseguiu descobrir a palavra!</p>
       </div>
 

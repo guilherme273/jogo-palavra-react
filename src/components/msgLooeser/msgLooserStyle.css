@@ -21,7 +21,7 @@
   margin-top: 5px;
   z-index: 1;
 }
-.section-msg-confirm .icon-animado {
+.section-msg-confirm .icon-animado-lose {
   background-color: rgb(59, 53, 59);
   background-color: none;
   padding: 0;
@@ -32,7 +32,7 @@
   padding: 0;
   margin: 0;
 }
-.section-msg-confirm .paragrafo {
+.section-msg-confirm .paragrafo-lose {
   padding: 10px;
   background-color: rgb(187, 167, 187);
   width: 100%;
