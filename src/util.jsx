@@ -116,7 +116,7 @@ export const Palavras = [
   "topo",
   "selo",
   "coco",
-  "lava",
+
   "faixa",
   "pato",
   "giro",

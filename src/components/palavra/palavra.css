@@ -21,6 +21,7 @@
   flex-direction: row;
   gap: 0.5rem;
 }
+
 .palavras .div-input-letras .input-letra {
   font-size: 40px;
   border: solid 5px rgba(0, 0, 0, 0.541);
@@ -32,8 +33,11 @@
   text-transform: uppercase;
   color: hsl(184, 70%, 91%);
   padding: 0;
+  caret-color: transparent;
 }
-
+.palavras .div-input-letras .input-letra:focus {
+  outline: solid 0.1px rgba(137, 43, 226, 0.226);
+}
 .palavras .button {
   outline: none;
   width: 350px;

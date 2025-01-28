@@ -56,8 +56,9 @@ function Palavra() {
     };
 
     const hasEmptyLetter = arrayInput.some((l) => l === "");
+    const hasInvalidChar = arrayInput.some((l) => /[^a-zA-Z]/.test(l));
 
-    if (hasEmptyLetter) {
+    if (hasEmptyLetter || hasInvalidChar) {
       showAlert();
       return;
     }
@@ -168,27 +169,26 @@ function Palavra() {
     setIsOpen(true);
   }, []);
 
-  useEffect(() => {
-    if (gameOver) {
-      return;
-    }
-
-    const handleKeyDown = (e) => {
-      if (e.key === "Backspace") {
-        // Usamos setTimeout para garantir que a exclusão do caractere ocorra primeiro
+  const handleKeyDown = (e) => {
+    if (e.key === "Backspace") {
+      const inputAtual = document.activeElement; // Captura o input atual
+      if (inputAtual.value === "") {
+        // e.preventDefault(); // Impede o apagamento de letra no campo se estiver vazio
         setTimeout(() => {
-          focarNoAnterior();
-        }, 0); // Colocando em uma fila de execução após o evento de "Backspace"
+          focarNoAnterior(); // Chama a função focar no anterior após o evento de "Backspace"
+        }, 0); // Usando setTimeout para garantir que o foco ocorra após a execução do evento
       }
-    };
+    }
+  };
 
+  // Adiciona o evento de escuta no useEffect
+  useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
 
-    // Limpeza do event listener
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [gameOver]);
+  }, []);
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
@@ -204,6 +204,47 @@ function Palavra() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [arrayInput, tentativas]);
+
+  useEffect(() => {
+    if (gameOver) {
+      return;
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        focarNoProximoCampo();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Limpeza do event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [gameOver]);
+
+  useEffect(() => {
+    if (gameOver) {
+      return;
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowLeft") {
+        // Chama a função para focar no campo anterior
+        e.preventDefault();
+        focarNoAnterior();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Limpeza do event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [gameOver]);
 
   return (
     <>
