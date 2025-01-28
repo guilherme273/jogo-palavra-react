@@ -29,15 +29,26 @@ function Palavra() {
   const [confirmLoser, setConfirmLoser] = useState(false);
   const [isAlertTrue, setisAlertTrue] = useState(false);
   const [tentativas, setTentativas] = useState(1);
+  const [contador, setContador] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   const atualizaInput = (e, index) => {
+    if (gameOver) {
+      return;
+    }
     const novoArray = [...arrayInput];
     novoArray[index] = e;
     setArrayInput(novoArray);
-    focarNoProximoCampo();
+
+    if (e !== "") {
+      focarNoProximoCampo();
+    }
   };
 
   const verificar = (e) => {
+    if (gameOver) {
+      return;
+    }
     e.preventDefault();
     const novoArray = {
       palavra: palavraArray.map(() => ""),
@@ -95,21 +106,41 @@ function Palavra() {
       ...prev,
       { ...novoArray, animationClass: "resultado-animado" },
     ]);
+    const primeiroInput = document.querySelectorAll("input")[0];
+    if (primeiroInput) {
+      primeiroInput.focus(); // Foca no primeiro input após o modal ser fechado
+    }
 
     setTentativas((prev) => prev + 1);
     if (tentativas === 7) {
       setTimeout(() => {
         setConfirmLoser(true);
       }, 1000);
+      setGameOver(true);
     }
   };
 
   const focarNoProximoCampo = () => {
-    const inputs = document.querySelectorAll("input, textarea, button");
+    if (gameOver) {
+      return;
+    }
+    const inputs = document.querySelectorAll("input");
     const indexFocado = Array.from(inputs).indexOf(document.activeElement);
 
     if (indexFocado >= 0 && indexFocado < inputs.length - 1) {
       inputs[indexFocado + 1].focus();
+    }
+  };
+  const focarNoAnterior = () => {
+    if (gameOver) {
+      return;
+    }
+    const inputs = document.querySelectorAll("input");
+    const indexFocado = Array.from(inputs).indexOf(document.activeElement);
+
+    if (indexFocado > 0) {
+      // Verifica se não é o primeiro campo
+      inputs[indexFocado - 1].focus(); // Move o foco para o campo anterior
     }
   };
 
@@ -122,8 +153,57 @@ function Palavra() {
   };
 
   useEffect(() => {
+    if (isOpen === false || contador === 0) {
+      // Verifica se o modal foi fechado e contador é 0
+
+      const primeiroInput = document.querySelectorAll("input")[0];
+      if (primeiroInput) {
+        primeiroInput.focus(); // Foca no primeiro input após o modal ser fechado
+      }
+      setContador(1);
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
     setIsOpen(true);
   }, []);
+
+  useEffect(() => {
+    if (gameOver) {
+      return;
+    }
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Backspace") {
+        // Usamos setTimeout para garantir que a exclusão do caractere ocorra primeiro
+        setTimeout(() => {
+          focarNoAnterior();
+        }, 0); // Colocando em uma fila de execução após o evento de "Backspace"
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Limpeza do event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [gameOver]);
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault(); // Impede o comportamento de enviar o formulário
+        verificar(e); // Chama a função de verificação
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Limpeza do event listener
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [arrayInput, tentativas]);
 
   return (
     <>

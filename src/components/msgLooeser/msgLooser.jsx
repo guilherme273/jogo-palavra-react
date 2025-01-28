@@ -4,7 +4,6 @@ import "./msgLooserStyle.css";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 function MsgLooser({ palavra }) {
-  palavra = ["1", "1", "1", "1", "1", "1"];
   return (
     <section className="section-msg-confirm">
       <h2 className="h2-confirm">Você Perdeu!</h2>
