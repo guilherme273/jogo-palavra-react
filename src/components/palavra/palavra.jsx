@@ -9,12 +9,12 @@ import Confirm from "../confirm/Confirm";
 import MsgConfirm from "../msgConfirm/MsgConfirm";
 import Alert from "../alert/Alert";
 import MsgLooser from "../msgLooeser/msgLooser";
+import Alert2 from "../alert2/Alert2";
 
-function Palavra() {
+function Palavra({ isOpen, setIsOpen }) {
   const [palavra, setPalavra] = useState(
     Palavras[gerarNumeroAleatorio(0, Palavras.length)]
   );
-  console.log(palavra);
 
   const palavraArray = palavra.split("");
   const [arrayInput, setArrayInput] = useState(palavraArray.map(() => ""));
@@ -24,10 +24,11 @@ function Palavra() {
       cl: palavraArray.map(() => ""),
     },
   ]);
-  const [isOpen, setIsOpen] = useState(false);
+
   const [isOpenConfirm, setisOpenConfirm] = useState(false);
   const [confirmLoser, setConfirmLoser] = useState(false);
   const [isAlertTrue, setisAlertTrue] = useState(false);
+  const [isAlertTrue2, setisAlertTrue2] = useState(false);
   const [tentativas, setTentativas] = useState(1);
   const [contador, setContador] = useState(0);
   const [gameOver, setGameOver] = useState(false);
@@ -56,14 +57,22 @@ function Palavra() {
     };
 
     const hasEmptyLetter = arrayInput.some((l) => l === "");
-    const hasInvalidChar = arrayInput.some((l) => /[^a-zA-Z]/.test(l));
+    const hasInvalidChar = arrayInput.some((l) =>
+      /[^a-zA-Záàãâäéèêëíìîïóòõôöúùûüç]/i.test(l)
+    );
 
-    if (hasEmptyLetter || hasInvalidChar) {
+    if (hasEmptyLetter) {
       showAlert();
+      setisAlertTrue2(false);
+      return;
+    }
+    if (hasInvalidChar) {
+      showAlert2();
+      setisAlertTrue(false);
       return;
     }
     const inputPalavra = arrayInput.join("");
-    if (inputPalavra === palavra) {
+    if (inputPalavra == palavra) {
       novoArray.palavra = arrayInput;
       arrayInput.forEach((inp, ind) => {
         novoArray.cl[ind] = "green";
@@ -150,6 +159,13 @@ function Palavra() {
 
     setTimeout(() => {
       setisAlertTrue(false);
+    }, 5000);
+  };
+  const showAlert2 = () => {
+    setisAlertTrue2(true);
+
+    setTimeout(() => {
+      setisAlertTrue2(false);
     }, 5000);
   };
 
@@ -279,7 +295,7 @@ function Palavra() {
         <button className="button" type="button" onClick={(e) => verificar(e)}>
           Verificar
         </button>
-        {/* <button onClick={() => setIsOpen(true)}>Abrir Modal</button> */}
+
         {/* <div className="teclado">
           <Teclado />
         </div> */}
@@ -298,8 +314,10 @@ function Palavra() {
             <MsgLooser palavra={palavraArray} />
           </Confirm>
         )}
-
-        {isAlertTrue && <Alert fechar={() => setisAlertTrue(false)} />}
+        <div className="alertss">
+          {isAlertTrue && <Alert fechar={() => setisAlertTrue(false)} />}
+          {isAlertTrue2 && <Alert2 fechar={() => setisAlertTrue2(false)} />}
+        </div>
       </section>
     </>
   );

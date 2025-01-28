@@ -1,7 +1,7 @@
 .section-alert {
   top: 0;
   right: 0;
-  z-index: 1000000000;
+  z-index: 100000000;
   width: 350px;
   height: 250px;
   position: absolute;
@@ -50,7 +50,7 @@
 }
 .section-alert .alert .alert-content .p {
   width: 80%;
-  font-size: 25px;
+  font-size: 20px;
   color: aliceblue;
   text-align: center;
 }

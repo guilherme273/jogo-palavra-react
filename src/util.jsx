@@ -29,6 +29,10 @@ export const Palavras = [
   "leão",
   "vento",
   "terra",
+  "coração",
+  "feijão",
+  "computador",
+  "aquário",
   "mesa",
   "cama",
   "rato",
@@ -104,19 +108,16 @@ export const Palavras = [
   "bicho",
   "mesa",
   "flor",
-  "povo",
   "raio",
   "papa",
   "fita",
   "couro",
-  "arco",
   "rua",
   "saco",
   "foca",
   "topo",
   "selo",
   "coco",
-
   "faixa",
   "pato",
   "giro",
@@ -130,41 +131,26 @@ export const Palavras = [
   "cobra",
   "bolo",
   "boca",
-
   "ideia",
-
   "amigo",
   "ícone",
   "fútil",
-
   "tempo",
-
   "casal",
-
   "genro",
-
   "temor",
-
   "pauta",
-
   "culto",
   "digno",
-
   "mundo",
   "forte",
   "vulgo",
-
   "vício",
-
   "saúde",
   "criar",
-
   "louco",
-
   "regra",
-
   "feliz",
-
   "homem",
 ];
 

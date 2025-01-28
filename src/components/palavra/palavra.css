@@ -59,3 +59,13 @@
 
   font-size: 15px;
 }
+.palavras .button:hover {
+  width: 350px;
+  background-color: rgb(78, 72, 78);
+  border: none;
+  color: hsl(184, 70%, 91%);
+  border-radius: 10px;
+  height: 25px;
+
+  font-size: 15px;
+}

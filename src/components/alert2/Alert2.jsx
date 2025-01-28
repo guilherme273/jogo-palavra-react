@@ -1,7 +1,7 @@
 import { CircleAlert, CircleX } from "lucide-react";
-import "./AlertStyle.css";
+import "./AlertStyle2.css";
 
-function Alert({ fechar }) {
+function Alert2({ fechar }) {
   return (
     <section className="section-alert">
       <div className="alert">
@@ -11,8 +11,7 @@ function Alert({ fechar }) {
         <CircleAlert className="icon-alert" color="yellow" size={100} />
         <div className="alert-content">
           <p className="p">
-            Existem Letras Faltando Na Palavra Digitada! Preencha todos os
-            campos!
+            Não utilize números ou acentos sem as letras correspondentes!
           </p>
         </div>
       </div>
@@ -20,4 +19,4 @@ function Alert({ fechar }) {
   );
 }
 
-export default Alert;
+export default Alert2;

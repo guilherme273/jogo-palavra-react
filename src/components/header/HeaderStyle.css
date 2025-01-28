@@ -1,0 +1,84 @@
+.header-1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-1 .link {
+  padding: 10px;
+  border-radius: 100%;
+  background-color: rgb(194, 194, 194);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.897);
+  text-decoration: none;
+  font-weight: bold;
+}
+.header-1 .link span {
+  display: none;
+}
+.header-1 .link:hover span {
+  display: inline;
+}
+.header-1 .link:hover {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(194, 194, 194);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.897);
+}
+.header-2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header-2 .link {
+  padding: 10px;
+  border-radius: 100%;
+  background-color: rgb(194, 194, 194);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.897);
+  text-decoration: none;
+  gap: 0.25rem;
+  font-weight: bold;
+}
+.header-2 .link span {
+  display: none;
+}
+.header-2 .link:hover span {
+  display: inline;
+}
+.header-2 .link:hover {
+  padding: 10px;
+  border-radius: 25px;
+  background-color: rgb(194, 194, 194);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.897);
+}
