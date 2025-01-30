@@ -36,7 +36,7 @@
   caret-color: transparent;
 }
 .palavras .div-input-letras .input-letra:focus {
-  outline: solid 0.1px rgba(137, 43, 226, 0.226);
+  outline: solid 3px rgba(137, 43, 226, 0.226);
 }
 .palavras .button {
   outline: none;
