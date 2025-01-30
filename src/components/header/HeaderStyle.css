@@ -1,7 +1,7 @@
 .header-1 {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 200px;
 
   z-index: 9997;
   transition: all 0.5s;
@@ -42,7 +42,7 @@
 .header-2 {
   position: fixed;
   top: 0;
-  right: 0;
+  right: 200px;
 
   z-index: 9997;
   transition: all 0.5s;

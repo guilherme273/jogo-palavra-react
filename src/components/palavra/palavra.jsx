@@ -15,7 +15,6 @@ function Palavra({ isOpen, setIsOpen }) {
   const [palavra, setPalavra] = useState(
     Palavras[gerarNumeroAleatorio(0, Palavras.length)]
   );
-
   const palavraArray = palavra.split("");
   const [arrayInput, setArrayInput] = useState(palavraArray.map(() => ""));
   const [arrayResultados, setArrayResultados] = useState([
