@@ -1,5 +1,5 @@
 import { CircleX } from "lucide-react";
-import "./Modalstyle.css";
+import "./ModalStyle.css";
 
 function ModalComponent({ idModal = "foraDoContainer", children, onClose }) {
   const verificaOndeFoi = (e) => {
