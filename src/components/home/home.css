@@ -33,18 +33,6 @@
 /* Para telas pequenas (320px até 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
   /* Estilos para telas entre 320px e 480px */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: rgb(43, 37, 43);
-  }
-
-  .body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 /* Para telas médias (481px até 768px) */
