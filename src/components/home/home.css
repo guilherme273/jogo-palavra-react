@@ -57,7 +57,7 @@
   width: 65px;
   text-align: center;
   border-radius: 5px;
-  background-color: green;
+  background-color: green !important;
 }
 .yellow {
   font-size: 45px;
@@ -65,7 +65,7 @@
   width: 65px;
   text-align: center;
   border-radius: 5px;
-  background-color: rgba(255, 255, 0, 0.545);
+  background-color: rgba(255, 255, 0, 0.545) !important;
   text-transform: uppercase;
 }
 .lose {
@@ -75,5 +75,5 @@
   width: 40px;
   text-align: center;
   border-radius: 5px;
-  background-color: green;
+  background-color: green !important;
 }
