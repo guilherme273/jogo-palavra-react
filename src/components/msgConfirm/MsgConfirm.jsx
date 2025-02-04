@@ -9,7 +9,7 @@ function MsgConfirm() {
         <DotLottieReact
           style={{ backgroundColor: "black" }}
           className="icon"
-          src="/public/animations/Animation - 1737051804942.lottie"
+          src="/animations/Animation - 1737051804942.lottie"
           loop
           autoplay
         />

@@ -11,7 +11,7 @@ function MsgLooser({ palavra }) {
         <DotLottieReact
           style={{ backgroundColor: "black" }}
           className="icon"
-          src="/public/animations/Animation - 1737089944683.lottie"
+          src="/animations/Animation - 1737089944683.lottie"
           loop
           autoplay
         />
