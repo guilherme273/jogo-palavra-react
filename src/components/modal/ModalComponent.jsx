@@ -15,7 +15,7 @@ function ModalComponent({ idModal = "foraDoContainer", children, onClose }) {
         <button onClick={onClose} className="close">
           <CircleX className="p" size={30} />
         </button>
-        <div className="modal-content">{children}</div>
+        <div className="modal-content">{}</div>
       </div>
     </div>
   );

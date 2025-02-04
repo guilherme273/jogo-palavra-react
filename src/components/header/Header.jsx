@@ -8,19 +8,21 @@ function Header({ abrir }) {
   };
   return (
     <>
-      <header className="header-1">
-        <a className="link" href="https://portifolio-refatorado.vercel.app/">
-          <ArrowLeft size={25} />
-          <span>Portifólio Do Progamador</span>
-        </a>
-      </header>
-      <header className="header-2">
-        <a onClick={(e) => x(e)} className="link" href="">
-          <span> Tutorial</span>
+      <div className="headertel">
+        <header className="header-1">
+          <a className="link" href="https://portifolio-refatorado.vercel.app/">
+            <ArrowLeft className="icon-hheader" size={25} />
+            <span>Portifólio Do Progamador</span>
+          </a>
+        </header>
+        <header className="header-2">
+          <a onClick={(e) => x(e)} className="link" href="">
+            <span> Tutorial</span>
 
-          <BookType size={25} />
-        </a>
-      </header>
+            <BookType className="icon-hheader" size={25} />
+          </a>
+        </header>
+      </div>
     </>
   );
 }

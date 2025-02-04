@@ -13,3 +13,52 @@
   height: 100vh;
   background-color: rgb(43, 37, 43);
 }
+
+@media (max-width: 319px) {
+  /* Estilos para telas menores que 320px */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(43, 37, 43);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Para telas pequenas (320px até 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Estilos para telas entre 320px e 480px */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(43, 37, 43);
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Para telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Estilos para telas entre 481px e 768px */
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Para telas grandes (769px até 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para telas entre 769px e 1024px */
+  body {
+    font-size: 20px;
+  }
+}

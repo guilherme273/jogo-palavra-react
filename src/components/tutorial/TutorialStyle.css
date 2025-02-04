@@ -73,3 +73,106 @@
   border-radius: 5px;
   background-color: rgba(255, 255, 0, 0.545);
 }
+
+@media (max-width: 319px) {
+  /* Estilos para telas menores que 320px */
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Para telas pequenas (320px até 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Estilos para telas entre 320px e 480px */
+  .sec-tuto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(185, 166, 185);
+    gap: 0.5rem;
+  }
+  .sec-tuto .title-tuto {
+    color: rgba(0, 0, 0, 0.795);
+    background-color: rgb(185, 166, 185);
+    font-size: 35px;
+    margin-top: -15px;
+  }
+
+  .sec-tuto .div-p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(61, 54, 61);
+    gap: 0.5rem;
+    padding: 15px;
+    border-radius: 25px;
+    border: 0.5px solid rgb(24, 21, 24);
+    width: 100%;
+    text-align: start;
+  }
+  .sec-tuto .div-p .p {
+    background-color: rgb(61, 54, 61);
+    font-size: 17px;
+    font-weight: bold;
+    color: hsl(184, 70%, 91%);
+  }
+  .sec-tuto .div-p .p .pp-verde {
+    background-color: rgb(61, 54, 61);
+    font-size: 17px;
+    font-weight: bold;
+    color: green;
+  }
+  .sec-tuto .div-p .p .pp-amarelo {
+    background-color: rgb(61, 54, 61);
+    font-size: 17px;
+    font-weight: bold;
+    color: yellow;
+  }
+  .sec-tuto .div-p .row-letras {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    background-color: rgb(61, 54, 61);
+  }
+
+  .sec-tuto .div-p .row-letras .neutra {
+    font-size: 50px;
+    border: solid 5px rgba(0, 0, 0, 0.541);
+    background-color: rgba(177, 154, 154, 0.315);
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .sec-tuto .div-p .row-letras .green {
+    font-size: 50px;
+    border: solid 5px rgba(0, 0, 0, 0.677);
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: green;
+  }
+  .sec-tuto .div-p .row-letras .yellow {
+    font-size: 50px;
+    border: solid 5px rgba(0, 0, 0, 0.699);
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 0, 0.545);
+  }
+}
+
+/* Para telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Estilos para telas entre 481px e 768px */
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Para telas grandes (769px até 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para telas entre 769px e 1024px */
+  body {
+    font-size: 20px;
+  }
+}

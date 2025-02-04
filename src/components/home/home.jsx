@@ -8,7 +8,7 @@ function Home() {
   return (
     <section className="body">
       <Header abrir={() => setIsOpen(true)} />
-      <Palavra isOpen={isOpen} setIsOpen={setIsOpen} />
+      {/* <Palavra isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </section>
   );
 }
