@@ -84,54 +84,6 @@
 
 /* Para telas pequenas (320px até 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
-  .palavras {
-    max-width: 480px;
-    height: auto;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .palavras .h1 {
-    font-size: 30px;
-    color: hsl(184, 70%, 91%);
-  }
-  .palavras .row-letras {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    width: 95%;
-  }
-  .palavras .div-input-letras {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-  .palavras .div-input-letras .input-letra {
-    font-size: 25px;
-    border: solid 5px rgba(0, 0, 0, 0.541);
-    background-color: rgba(0, 0, 0, 0.315);
-    width: 35px;
-    height: 40px;
-    text-align: center;
-    border-radius: 5px;
-    text-transform: uppercase;
-    color: hsl(184, 70%, 91%);
-    padding: 0;
-    caret-color: transparent;
-  }
-  .palavras .button {
-    outline: none;
-    width: 60%;
-    background-color: rgb(63, 60, 63);
-    border: none;
-    color: hsl(184, 70%, 91%);
-    border-radius: 10px;
-
-    cursor: pointer;
-    font-size: 15px;
-  }
 }
 
 /* Para telas médias (481px até 768px) */
