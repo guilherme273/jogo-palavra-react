@@ -99,7 +99,7 @@
     justify-content: center;
   }
   .header-1 {
-    width: 49%;
+    width: 50%;
     z-index: 9997;
     transition: all 0.5s;
     padding: 15px;
@@ -140,10 +140,10 @@
     color: rgba(0, 0, 0, 0.897);
     text-decoration: none;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
   }
   .header-2 {
-    width: 49%;
+    width: 50%;
     z-index: 9997;
     transition: all 0.5s;
     padding: 15px;
@@ -166,7 +166,7 @@
     text-decoration: none;
     gap: 0.25rem;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 15px;
   }
   .header-2 .link span {
     display: inline;
@@ -186,7 +186,7 @@
   }
 
   .icon-hheader {
-    width: 20px;
+    width: 30px;
     background-color: transparent;
   }
 }
