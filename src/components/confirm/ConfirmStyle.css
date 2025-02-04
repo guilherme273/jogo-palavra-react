@@ -56,3 +56,80 @@
   position: relative;
   border-radius: 20px;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .confirm {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+
+  .confirm .container {
+    width: 90%;
+    height: 70%;
+    background-color: rgb(59, 53, 59);
+    color: black;
+    position: relative;
+    border-radius: 5px 5px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid rgb(206, 34, 206);
+    gap: 0.5rem;
+  }
+  .confirm .container .buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  .confirm .container .buttons button {
+    background-color: rgb(187, 167, 187);
+    border: 0.5px solid rgb(124, 86, 124);
+    width: 50%;
+    padding: 4px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .confirm .container .buttons button:hover {
+    background-color: rgb(199, 177, 199);
+    border: 0.5px solid rgb(97, 67, 97);
+    width: 50%;
+    padding: 4px;
+    border-radius: 10px;
+    font-weight: bold;
+  }
+  .confirm .container .confirm-content {
+    width: 90%;
+    height: 90%;
+    background-color: rgb(59, 53, 59);
+    position: relative;
+    border-radius: 20px;
+  }
+}
+
+/* Para telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Estilos para telas entre 481px e 768px */
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Para telas grandes (769px até 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para telas entre 769px e 1024px */
+  body {
+    font-size: 20px;
+  }
+}
