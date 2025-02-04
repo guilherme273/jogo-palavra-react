@@ -38,3 +38,42 @@
     font-size: 20px;
   }
 }
+
+.neutra {
+  font-size: 45px;
+  border: solid 5px rgba(0, 0, 0, 0.541);
+  background-color: rgba(0, 0, 0, 0.315);
+  width: 65px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  color: hsl(184, 70%, 91%);
+}
+.green {
+  font-size: 45px;
+  text-transform: uppercase;
+
+  border: solid 5px rgba(0, 0, 0, 0.677);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+}
+.yellow {
+  font-size: 45px;
+  border: solid 5px rgba(0, 0, 0, 0.699);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 0, 0.545);
+  text-transform: uppercase;
+}
+.lose {
+  font-size: 30px;
+  text-transform: uppercase;
+  border: solid 3px rgba(0, 0, 0, 0.677);
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+}
