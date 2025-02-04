@@ -92,29 +92,26 @@
 
 /* Para telas pequenas (320px até 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
-  /* Estilos para telas entre 320px e 480px */
   .headertel {
     max-width: 480px;
     display: flex;
     flex-direction: row;
-    gap: 2px;
     justify-content: center;
-    align-items: center;
   }
   .header-1 {
+    width: 50%;
     z-index: 9997;
     transition: all 0.5s;
-    padding: 5px;
+    padding: 15px;
     overflow-y: auto;
-    gap: 2px;
+    gap: 0.25rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   .header-1 .link {
-    padding: 0;
-    border-radius: 100%;
+    padding: 5px;
+    border-radius: 25px;
     background-color: rgb(194, 194, 194);
     display: flex;
     text-align: center;
@@ -123,30 +120,32 @@
     color: rgba(0, 0, 0, 0.897);
     text-decoration: none;
     font-weight: bold;
-  }
-  .header-1 .link .icon-h-1 {
-    background-color: transparent;
+    font-size: 10px;
   }
   .header-1 .link span {
-    /* display: none; */
+    display: inline;
+    background-color: transparent;
   }
   .header-1 .link:hover span {
     display: inline;
-    background-color: transparent;
-    font-size: 10px;
   }
   .header-1 .link:hover {
+    padding: 5px;
     border-radius: 25px;
     background-color: rgb(194, 194, 194);
     display: flex;
     text-align: center;
     justify-content: center;
+    align-items: center;
     color: rgba(0, 0, 0, 0.897);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10px;
   }
   .header-2 {
     z-index: 9997;
     transition: all 0.5s;
-    padding: 5px;
+    padding: 15px;
     overflow-y: auto;
 
     display: flex;
@@ -155,8 +154,8 @@
   }
 
   .header-2 .link {
-    padding: 0;
-    border-radius: 100%;
+    padding: 5px;
+    border-radius: 25px;
     background-color: rgb(194, 194, 194);
     display: flex;
     text-align: center;
@@ -164,20 +163,19 @@
     align-items: center;
     color: rgba(0, 0, 0, 0.897);
     text-decoration: none;
-    gap: 2px;
+    gap: 0.25rem;
     font-weight: bold;
-  }
-  .header-2 .link .icon-h-2 {
-    background-color: transparent;
+    font-size: 10px;
   }
   .header-2 .link span {
-    /* display: none; */
+    display: inline;
+    background-color: transparent;
   }
   .header-2 .link:hover span {
     display: inline;
-    font-size: 10px;
   }
   .header-2 .link:hover {
+    padding: 10px;
     border-radius: 25px;
     background-color: rgb(194, 194, 194);
     display: flex;
@@ -185,6 +183,7 @@
     justify-content: center;
     color: rgba(0, 0, 0, 0.897);
   }
+
   .icon-hheader {
     width: 20px;
     background-color: transparent;
