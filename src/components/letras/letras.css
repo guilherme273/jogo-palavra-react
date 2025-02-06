@@ -39,9 +39,6 @@
 
 @media (max-width: 319px) {
   /* Estilos para telas menores que 320px */
-  body {
-    font-size: 14px;
-  }
 }
 
 /* Para telas pequenas (320px até 480px) */
@@ -90,15 +87,9 @@
 /* Para telas médias (481px até 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   /* Estilos para telas entre 481px e 768px */
-  body {
-    font-size: 18px;
-  }
 }
 
 /* Para telas grandes (769px até 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Estilos para telas entre 769px e 1024px */
-  body {
-    font-size: 20px;
-  }
 }
