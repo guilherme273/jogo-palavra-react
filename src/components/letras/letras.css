@@ -45,7 +45,7 @@
 @media (min-width: 320px) and (max-width: 480px) {
   /* Estilos para telas entre 320px e 480px */
   .neutra {
-    font-size: 100px;
+    font-size: 45px;
     border: solid 5px rgba(0, 0, 0, 0.541);
     background-color: rgba(0, 0, 0, 0.315);
     width: 65px;
@@ -53,16 +53,18 @@
     text-align: center;
     border-radius: 5px;
     color: hsl(184, 70%, 91%);
+    z-index: 10000;
   }
   .green {
     font-size: 45px;
     text-transform: uppercase;
-
+    
     border: solid 5px rgba(0, 0, 0, 0.677);
     width: 65px;
     text-align: center;
     border-radius: 5px;
     background-color: green;
+    z-index: 10000;
   }
   .yellow {
     font-size: 45px;
@@ -72,6 +74,7 @@
     border-radius: 5px;
     background-color: rgba(255, 255, 0, 0.545);
     text-transform: uppercase;
+    z-index: 10000;
   }
   .lose {
     font-size: 30px;
@@ -81,6 +84,7 @@
     text-align: center;
     border-radius: 5px;
     background-color: green;
+    z-index: 10000;
   }
 }
 
