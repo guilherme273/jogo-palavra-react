@@ -45,7 +45,7 @@
 @media (min-width: 320px) and (max-width: 480px) {
   /* Estilos para telas entre 320px e 480px */
   .neutra {
-    font-size: 45px;
+    font-size: 100px;
     border: solid 5px rgba(0, 0, 0, 0.541);
     background-color: rgba(0, 0, 0, 0.315);
     width: 65px;

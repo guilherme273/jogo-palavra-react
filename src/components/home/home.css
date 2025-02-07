@@ -20,44 +20,7 @@
 
 /* Para telas pequenas (320px até 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
-  .neutra {
-    font-size: 45px;
-    border: solid 5px rgba(0, 0, 0, 0.541);
-    background-color: rgba(0, 0, 0, 0.315);
-    width: 65px;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 5px;
-    color: hsl(184, 70%, 91%);
-  }
-  .green {
-    font-size: 45px;
-    text-transform: uppercase;
-  
-    border: solid 5px rgba(0, 0, 0, 0.677);
-    width: 65px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: green !important;
-  }
-  .yellow {
-    font-size: 45px;
-    border: solid 5px rgba(0, 0, 0, 0.699);
-    width: 65px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 0, 0.545) !important;
-    text-transform: uppercase;
-  }
-  .lose {
-    font-size: 30px;
-    text-transform: uppercase;
-    border: solid 3px rgba(0, 0, 0, 0.677);
-    width: 40px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: green !important;
-  }
+
   
 }
 
@@ -77,41 +40,3 @@
   }
 }
 
-.neutra {
-  font-size: 45px;
-  border: solid 5px rgba(0, 0, 0, 0.541);
-  background-color: rgba(0, 0, 0, 0.315);
-  width: 65px;
-  text-transform: uppercase;
-  text-align: center;
-  border-radius: 5px;
-  color: hsl(184, 70%, 91%);
-}
-.green {
-  font-size: 45px;
-  text-transform: uppercase;
-
-  border: solid 5px rgba(0, 0, 0, 0.677);
-  width: 65px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: green !important;
-}
-.yellow {
-  font-size: 45px;
-  border: solid 5px rgba(0, 0, 0, 0.699);
-  width: 65px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 0, 0.545) !important;
-  text-transform: uppercase;
-}
-.lose {
-  font-size: 30px;
-  text-transform: uppercase;
-  border: solid 3px rgba(0, 0, 0, 0.677);
-  width: 40px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: green !important;
-}
