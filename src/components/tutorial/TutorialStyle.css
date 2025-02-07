@@ -131,8 +131,9 @@
   .sec-tuto .div-p .row-letras {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
+    gap: 0.3rem;
     background-color: rgb(61, 54, 61);
+    max-width: 100%;
   }
 
   .sec-tuto .div-p .row-letras .neutra {
