@@ -11,6 +11,8 @@
   font-size: 30px;
   color: hsl(184, 70%, 91%);
 }
+
+
 .palavras .row-letras {
   display: flex;
   flex-direction: row;

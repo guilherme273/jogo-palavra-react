@@ -10,6 +10,7 @@ import MsgConfirm from "../msgConfirm/MsgConfirm";
 import Alert from "../alert/Alert";
 import MsgLooser from "../msgLooeser/msgLooser";
 import Alert2 from "../alert2/Alert2";
+import { Gamepad2 } from "lucide-react";
 
 function Palavra({ isOpen, setIsOpen }) {
   const [palavra, setPalavra] = useState(
@@ -294,6 +295,9 @@ function Palavra({ isOpen, setIsOpen }) {
         <button className="button" type="button" onClick={(e) => verificar(e)}>
           Verificar
         </button>
+
+        <br />
+
 
         {/* <div className="teclado">
           <Teclado />
