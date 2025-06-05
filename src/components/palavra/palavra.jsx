@@ -264,7 +264,7 @@ function Palavra({ isOpen, setIsOpen }) {
 
   return (
     <>
-      <section className="palavras">
+      <section className="section-palavras">
         <h1 className="h1">Descubra a Palavra</h1>
         {arrayResultados.map((resultado, indice) => {
           return (
@@ -297,7 +297,6 @@ function Palavra({ isOpen, setIsOpen }) {
         </button>
 
         <br />
-
 
         {/* <div className="teclado">
           <Teclado />
