@@ -1,0 +1,95 @@
+.neutra {
+  font-size: 45px;
+  border: solid 5px rgba(0, 0, 0, 0.541);
+  background-color: rgba(0, 0, 0, 0.315);
+  width: 65px;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 5px;
+  color: hsl(184, 70%, 91%);
+}
+.green {
+  font-size: 45px;
+  text-transform: uppercase;
+
+  border: solid 5px rgba(0, 0, 0, 0.677);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+}
+.yellow {
+  font-size: 45px;
+  border: solid 5px rgba(0, 0, 0, 0.699);
+  width: 65px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 0, 0.545);
+  text-transform: uppercase;
+}
+.lose {
+  font-size: 30px;
+  text-transform: uppercase;
+  border: solid 3px rgba(0, 0, 0, 0.677);
+  width: 40px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: green;
+}
+
+@media (max-width: 319px) {
+  /* Estilos para telas menores que 320px */
+}
+
+/* Para telas pequenas (320px até 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+  /* Estilos para telas entre 320px e 480px */
+  .neutra {
+    font-size: 45px;
+    border: solid 5px rgba(0, 0, 0, 0.541);
+    background-color: rgba(0, 0, 0, 0.315);
+    width: 65px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5px;
+    color: hsl(184, 70%, 91%);
+  }
+  .green {
+    font-size: 45px;
+    text-transform: uppercase;
+
+    border: solid 5px rgba(0, 0, 0, 0.677);
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: green;
+  }
+  .yellow {
+    font-size: 45px;
+    border: solid 5px rgba(0, 0, 0, 0.699);
+    width: 65px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 0, 0.545);
+    text-transform: uppercase;
+  }
+  .lose {
+    font-size: 30px;
+    text-transform: uppercase;
+    border: solid 3px rgba(0, 0, 0, 0.677);
+    width: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: green;
+  }
+}
+
+/* Para telas médias (481px até 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  /* Estilos para telas entre 481px e 768px */
+}
+
+/* Para telas grandes (769px até 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Estilos para telas entre 769px e 1024px */
+}

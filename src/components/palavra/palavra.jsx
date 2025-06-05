@@ -264,7 +264,7 @@ function Palavra({ isOpen, setIsOpen }) {
 
   return (
     <>
-      <section className="section-palavras">
+      <section className="palavras">
         <h1 className="h1">Descubra a Palavra</h1>
         {arrayResultados.map((resultado, indice) => {
           return (
